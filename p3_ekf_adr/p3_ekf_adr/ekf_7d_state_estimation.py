@@ -17,8 +17,10 @@ def main(args=None):
     mu0 = np.zeros(7)
     Sigma0 = np.eye(7)
     # TO ADJUST
-    proc_noise_std = [0.1, 0.1, 0.05, 0.1, 0.1, 0.1, 0.1] # [x, y, theta, v, w, a_x, a_y]
-    obs_noise_std = [1.0, 1.0, 10.0, 6.853891945200942e-06, 1.0966227112321507e-06, 0.0015387262937311438, 0.0015387262937311438] #[x, y, theta, theta_imu, w, a_x, a_y]
+    proc_noise_std = [0.05, 0.05, 0.02, 0.1, 0.05, 0.2, 0.2] # [x, y, theta, v, w, a_x, a_y]
+    # 0.1, 0.1, 0.05, 0.1, 0.1, 0.1, 0.1
+    obs_noise_std = [0.1, 0.1, 0.05, 0.2, 0.1, 0.3, 0.3] #[x, y, theta, theta_imu, w, a_x, a_y]
+    # 100.0, 100.0, 1000.0, 6.853891945200942e-06, 1.0966227112321507e-06, 0.0015387262937311438, 0.0015387262937311438
 
     # === TODO: Replace the None below with proper motion and observation model functions ===
     ekf = ExtendedKalmanFilter(mu0, Sigma0,
