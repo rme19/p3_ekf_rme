@@ -8,7 +8,6 @@ import numpy as np
 def acceleration_motion_model_linearized_1():
 
 	def state_transition_function_g(mu = None, u = None, delta_t = None):
-		
 		x, y, theta, v, w, a_x, a_y = mu
 
 		v = u[0]      

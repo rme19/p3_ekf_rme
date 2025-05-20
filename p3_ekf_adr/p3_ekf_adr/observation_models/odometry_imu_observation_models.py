@@ -72,7 +72,7 @@ def odometry_imu_observation_model_with_acceleration_motion_model_linearized_2()
                     [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  	         
                     [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],   	     
                     [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],   	     
-                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]])   	     
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]], dtype=np.float64)   	     
                     
 
 	return observation_function_h, jacobian_of_h_wrt_state_H

@@ -34,13 +34,17 @@ class ExtendedKalmanFilter:
 	def predict(self, u, dt):
 		start_time = time.time()
         # === TODO: Implement the EKF prediction step ===
-
         # 1. Predict the new mean using motion model g
-		self.mu = self.g(mu=self.mu, u=u, delta_t=dt)
+		print("self.mu type:", type(self.mu), "dtype:", self.mu.dtype)
+		self.mu = self.g(self.mu, u, dt)
+		print("self.mu type:", type(self.mu), "dtype:", self.mu.dtype)
         # 2. Compute the Jacobian of the motion model G_t
-		G_t = self.G(mu=self.mu, u=u, delta_t=dt)
+		G_t = self.G(self.mu, u, dt)
         # 3. Update the covariance
 		self.Sigma = G_t @ self.Sigma @ G_t.T + self.R
+
+		print("G_t type:", type(G_t), "dtype:", G_t.dtype)
+		print("Sigma type:", type(self.Sigma), "dtype:", self.Sigma.dtype)
         # ===============================================
 
 		end_time = time.time()
@@ -55,21 +59,26 @@ class ExtendedKalmanFilter:
 	def update(self, z, dt):
 		start_time = time.time()
 
-        # === TODO: Implement the EKF correction step ===
-
-        # 1. Compute the Jacobian of the observation model H_t
-		H_t = self.H(self.mu, self.z, dt)
+        # === TODO: Implement the EKF correction step ===)
+        # 1. Compute the Jacobian of the observation model H
+		H_t = self.H(self.mu)
         # 2. Innovation covariance
-		S = H_t @ self.Sigma @ H_t.T + self.Q
+		S_t = H_t @ self.Sigma @ H_t.T + self.Q
+
+		print("H_t type:", type(H_t), "dtype:", H_t.dtype)
+		print("Sigma type:", type(self.Sigma), "dtype:", self.Sigma.dtype)
+		print("Q type:", type(self.Q), "dtype:", self.Q.dtype)
+
         # 3. Kalman gain
-		K = self.Sigma @ H_t.T @ np.linalg.inv(S)
+		K_t = self.Sigma @ H_t.T @ np.linalg.inv(S_t)
+		# K_t = np.zeros((self.Sigma.shape[0], H_t.shape[0]))
         # 4. Innovation (difference between actual and expected measurement)
-		y = z - self.h(self.mu, self.z, dt)
+		y = (z - self.h(self.mu)).flatten()
         # 5. Update the state estimate
-		self.mu = self.mu + K @ y
+		self.mu = self.mu + K_t @ y
         # 6. Update the covariance
 		I = np.eye(len(self.mu))
-		self.Sigma = (I - K @ H_t) @ self.Sigma
+		self.Sigma = (I - K_t @ H_t) @ self.Sigma
 
         # ================================================
 
