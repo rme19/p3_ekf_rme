@@ -1,0 +1,22 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/roberto/adr_ws/install/pf_adr/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/sjtu_drone_control/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/sjtu_drone_bringup/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/ros2custom/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/roberto/adr_ws/install/pf_adr/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/sjtu_drone_control/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/sjtu_drone_bringup/lib/python3.10/site-packages",
+        "/home/roberto/adr_ws/install/ros2custom/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

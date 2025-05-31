@@ -38,7 +38,7 @@ De acuerdo con la gráfica _Ruido_alto_mov_3d.png_, podemos ver que la estimaci�
 
 
 ## EKF 7D
-Para esta implementación, el modelo de movimiento que utilizaremos será el que aparece en `velocity_motion_models.py`, concretamente, `velocity_motion_model_linearized`. Mientras tanto, el modelo de observación será `odometry_observation_models.py`, más concretamente `odometry_observation_model_linearized`.
+Para esta implementación, el modelo de movimiento que utilizaremos será el que aparece en `acceleration_motion_models.py`, concretamente, `acceleration_motion_model_linearized_1`. Mientras tanto, el modelo de observación será `odometry_imu_observation_models.py`, más concretamente `odometry_imu_observation_model_with_acceleration_motion_model_linearized_1`.
 
 ### Caso base
 Tendremos: 
@@ -59,11 +59,11 @@ Tendremos:
 - Incertidumbre en modelo de movimiento: [0.5, 0.5, 0.25, 0.5, 0.5, 0.5, 0.5]
 - Incertidumbre en observación: [100.0, 100.0, 1000.0, 6.853891945200942e-06, 1.0966227112321507e-06, 0.0015387262937311438, 0.0015387262937311438]
 
-De acuerdo con la gráfica _Ruido_alto_mov_7d.png_, podemos ver que la estimación ha mejorado ligeramente respecto a los otros dos casos, por lo que podríamos decir que ahora el modelo funciona mejor, dándonos a pensar que los ruidos de ambos modelos estaban un poco descompensados y quizá no eran realistas. 
+De acuerdo con la gráfica _Ruido_alto_mov_7d.png_, podemos ver que la estimación ha mejorado ligeramente respecto a los otros dos casos, por lo que podríamos decir que ahora el modelo funciona mejor, dándonos a pensar que los ruidos las configuraciones anteriores del filtro estaban un poco descompensados y quizá no eran realistas. 
 
 
 ## EKF 8D
-Para esta implementación, el modelo de movimiento que utilizaremos será el que aparece en `velocity_motion_models.py`, concretamente, `velocity_motion_model_linearized`. Mientras tanto, el modelo de observación será `odometry_observation_models.py`, más concretamente `odometry_observation_model_linearized`.
+Para esta implementación, el modelo de movimiento que utilizaremos será el que aparece en `acceleration_motion_models.py`, concretamente, `acceleration_motion_model_linearized_2`. Mientras tanto, el modelo de observación será `odometry_imu_observation_models.py`, más concretamente `odometry_imu_observation_model_with_acceleration_motion_model_linearized_2`.
 
 ### Caso base
 Tendremos: 

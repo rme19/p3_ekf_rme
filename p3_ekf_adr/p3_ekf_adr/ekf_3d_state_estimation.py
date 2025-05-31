@@ -15,7 +15,7 @@ def main(args=None):
     mu0 = np.zeros(3)
     Sigma0 = np.eye(3)
     # TO ADJUST
-    proc_noise_std = [0.002, 0.002, 0.001] 
+    proc_noise_std = [0.01, 0.01, 0.005] 
     obs_noise_std = [1.02, 1.02, 100.01]
 
     ekf = ExtendedKalmanFilter(mu0, Sigma0, 
